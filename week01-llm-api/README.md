@@ -1,7 +1,7 @@
 # 1주차 · LLM API 기초 (+ API의 이해)
 
 > 범생코드 AI 엔지니어 10주 과정 · 1주차
-> 영상: 월(개념) · 수(실무) · 토(같이 만들기) — 링크는 공개 후 추가
+> 영상과 글: [beomsaengcode.github.io](https://beomsaengcode.github.io)
 
 ## 이번 주에 알게 되는 것
 

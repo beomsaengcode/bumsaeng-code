@@ -7,4 +7,5 @@
 | 2026-11-10 | offline · 예시 응답 | ✅ | ✅ | ✅ |
 | 2026-11-10 | openai · gpt-5-mini | ✅ | ✅ | ✅ |
 | 2026-11-10 | ollama · qwen2.5:1.5b | ✅ | ✅ | ✅ |
+| 2026-11-10 | 코드 정렬(ruff) 뒤 offline · ollama 다시 실행 | ✅ | ✅ | ✅ (offline) |
 | 대기 | claude · claude-opus-5-5 | 키 받으면 테스트 | | |
