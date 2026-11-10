@@ -1,0 +1,27 @@
+{
+  "_note": "손으로 만든 예시 대화(실측 아님). 입력 토큰이 턴마다 늘어나는 모양을 보여 주기 위한 값.",
+  "turns": [
+    {
+      "assistant": "주소(URL)로 자원을 가리키고, GET·POST 같은 HTTP 메서드로 그 자원을 다루는 방식이에요.",
+      "input_tokens": 18,
+      "output_tokens": 52
+    },
+    {
+      "assistant": "주소는 하나로 두고, 필요한 필드만 질의해서 받아 오는 방식이에요.",
+      "input_tokens": 85,
+      "output_tokens": 44
+    },
+    {
+      "assistant": "공개 API·캐시가 중요하면 REST, 화면마다 필요한 데이터가 제각각이면 GraphQL이 편해요.",
+      "input_tokens": 141,
+      "output_tokens": 58
+    }
+  ],
+  "single": {
+    "HTTP 403이랑 404 차이를 한 줄로 알려줘": {
+      "assistant": "403은 '누군지는 알지만 권한이 없다', 404는 '그런 주소(자원)가 없다'예요.",
+      "input_tokens": 24,
+      "output_tokens": 61
+    }
+  }
+}

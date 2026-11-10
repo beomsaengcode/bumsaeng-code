@@ -1,0 +1,8 @@
+{
+  "_note": "예시 값(실측 아님). 키를 넣고 실행하면 실제로 셉니다.",
+  "counts": {
+    "환불 규정을 알려주세요.": 16, "Please tell me the refund policy.": 13,
+    "주문이 저장됐는데 결제 이벤트가 사라졌어요.": 24, "The order was saved but the payment event disappeared.": 18,
+    "이 함수가 왜 느린지 설명해 주세요.": 19, "Please explain why this function is slow.": 15
+  }
+}
