@@ -4,6 +4,7 @@
 ※ 토큰을 세는 방법은 공급자마다 다르다(Claude: 무료 count_tokens / OpenAI: 아주 짧은 요청의 입력 토큰).
 ※ 모델마다 토크나이저가 달라서 숫자도 다르다. 비교는 같은 모델 안에서만.
 """
+
 from _setup import llm
 
 PAIRS = [

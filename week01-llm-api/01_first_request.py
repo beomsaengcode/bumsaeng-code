@@ -3,6 +3,7 @@
 실행: python 01_first_request.py "HTTP 403이랑 404 차이를 한 줄로"
 공급자 바꾸기: LLM_PROVIDER=openai|claude|offline  ·  모델 바꾸기: LLM_MODEL=...
 """
+
 import sys
 
 from _setup import llm, show_usage

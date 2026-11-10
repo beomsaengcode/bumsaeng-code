@@ -1,4 +1,5 @@
 """키가 없을 때: fixtures/ 의 예시 응답을 돌려준다(실측 아님)."""
+
 import json
 from pathlib import Path
 
@@ -21,13 +22,20 @@ class OfflineProvider(Provider):
         turns = data["turns"]
         t = single or turns[min(self.turn, len(turns) - 1)]
         self.turn += 1
-        return Reply(t["assistant"], "end", t["input_tokens"], t["output_tokens"], self.name, self.model, "offline-%d" % self.turn)
+        return Reply(
+            t["assistant"],
+            "end",
+            t["input_tokens"],
+            t["output_tokens"],
+            self.name,
+            self.model,
+            f"offline-{self.turn}",
+        )
 
     def stream(self, messages, system=None, max_tokens=None):
         reply = self.chat(messages, system, max_tokens)
         self.last = reply
-        for ch in reply.text:
-            yield ch
+        yield from reply.text
 
     def count_tokens(self, text):
         counts = self._load("token_counts.json")["counts"]

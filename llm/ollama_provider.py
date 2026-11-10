@@ -1,6 +1,7 @@
 """Ollama (내 PC에서 도는 로컬 모델, 무료). 서버: http://localhost:11434
 켜기: ollama serve (또는 ollama 앱) · 모델 받기: ollama pull qwen2.5:1.5b
 """
+
 import json
 import os
 
@@ -28,14 +29,21 @@ class OllamaProvider(Provider):
     def _post(self, body, stream=False):
         try:
             r = requests.post(f"{HOST}/api/chat", json=body, stream=stream, timeout=300)
-        except requests.ConnectionError:
-            raise SystemExit("Ollama 서버가 꺼져 있어요. 켜고 다시 실행하세요 (ollama serve).")
+        except requests.ConnectionError as e:
+            raise SystemExit("Ollama 서버가 꺼져 있어요. 켜고 다시 실행하세요 (ollama serve).") from e
         r.raise_for_status()
         return r
 
     def _reply(self, d, text):
-        return Reply(text, STOP.get(d.get("done_reason"), "other"), d.get("prompt_eval_count", 0),
-                     d.get("eval_count", 0), self.name, d.get("model", self.model), d.get("created_at", ""))
+        return Reply(
+            text,
+            STOP.get(d.get("done_reason"), "other"),
+            d.get("prompt_eval_count", 0),
+            d.get("eval_count", 0),
+            self.name,
+            d.get("model", self.model),
+            d.get("created_at", ""),
+        )
 
     def chat(self, messages, system=None, max_tokens=None):
         d = self._post(self._body(messages, system, max_tokens, False)).json()

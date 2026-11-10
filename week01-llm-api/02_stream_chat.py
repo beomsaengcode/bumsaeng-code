@@ -4,6 +4,7 @@
 실행: python 02_stream_chat.py          (빈 줄 입력 시 종료)
       python 02_stream_chat.py --demo   (정해진 질문 3개로 자동 진행)
 """
+
 import sys
 
 from _setup import llm, show_usage
@@ -23,6 +24,6 @@ for i in range(len(DEMO) if auto else 10**9):
         print(piece, end="", flush=True)
     print()
     r = llm.last
-    history.append(r.as_message())   # 다음 요청에 이번 답을 붙인다
+    history.append(r.as_message())  # 다음 요청에 이번 답을 붙인다
     show_usage(r)
     print(f"[대화 길이] 메시지 {len(history)}개 → 다음 요청은 이걸 전부 다시 보냄\n")
